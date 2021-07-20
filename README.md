@@ -1,1 +1,1 @@
-cos ranger interface
+和权限相关的数据结构
