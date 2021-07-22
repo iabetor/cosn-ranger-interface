@@ -2,6 +2,7 @@ package org.apache.hadoop.fs.cosn.ranger.protocol;
 
 import org.apache.hadoop.fs.cosn.ranger.security.authorization.PermissionRequest;
 import org.apache.hadoop.fs.cosn.ranger.security.authorization.PermissionResponse;
+import org.apache.hadoop.fs.cosn.ranger.security.authorization.RangerAuthPolicyResponse;
 import org.apache.hadoop.fs.cosn.ranger.security.sts.GetSTSRequest;
 import org.apache.hadoop.fs.cosn.ranger.security.sts.GetSTSResponse;
 import org.apache.hadoop.fs.cosn.ranger.security.token.DelegationTokenIdentifier;
@@ -60,10 +61,12 @@ public interface ClientQcloudObjectStorageProtocol {
     @Idempotent
     GetSTSResponse getSTS(GetSTSRequest request) throws IOException;
 
-
+    /**
+     * Get Ranger Auth And Policy URL
+     *
+     * @return get sts response
+     * @throws IOException
+     */
     @Idempotent
-    String getRangerPolicyUrl() throws IOException;
-
-    @Idempotent
-    String getExtralAuthInfo()throws IOException;
+    RangerAuthPolicyResponse getRangerAuthPolicy() throws IOException;
 }
