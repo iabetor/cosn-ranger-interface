@@ -2,6 +2,8 @@ package org.apache.hadoop.fs.cosn.ranger.client;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.cosn.ranger.security.authorization.PermissionRequest;
+import org.apache.hadoop.fs.cosn.ranger.security.authorization.PermissionResponse;
+import org.apache.hadoop.fs.cosn.ranger.security.authorization.RangerAuthPolicyResponse;
 import org.apache.hadoop.fs.cosn.ranger.security.sts.GetSTSResponse;
 import org.apache.hadoop.security.token.Token;
 
@@ -12,7 +14,7 @@ public interface RangerQcloudObjectStorageClient {
 
     public String getCanonicalServiceName();
 
-    public boolean checkPermission(PermissionRequest permissionRequest) throws IOException;
+    public PermissionResponse checkPermission(PermissionRequest permissionRequest) throws IOException;
 
     public Token<?> getDelegationToken(String renewer) throws IOException;
 
@@ -36,7 +38,7 @@ public interface RangerQcloudObjectStorageClient {
 
     public GetSTSResponse getSTS(String bucketRegion, String bucketName) throws IOException;
 
-    String getRangerPolicyUrl() throws IOException;
+    RangerAuthPolicyResponse getRangerAuthPolicy() throws IOException;
 
     public void close();
 }

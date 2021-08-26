@@ -15,7 +15,7 @@ deploy_repository_url="http://mirrors.tencent.com/repository/maven/QCLOUD_COS"
 
 origin_artifact_version=$(mvn -q -Dexec.executable="echo" -Dexec.args='${project.version}' --non-recursive exec:exec)
 prefix="cosn-ranger-interface"-${origin_artifact_version}
-cd script_conf/
+cd script_conf/jar
 pom_file=${prefix}.pom
 read groupId artifactId versionId <<<$(mvn -f ${pom_file} -q -Dexec.executable="echo" -Dexec.args='${project.groupId} ${project.artifactId}  ${project.version}' --non-recursive exec:exec)
 echo ${prefix}
