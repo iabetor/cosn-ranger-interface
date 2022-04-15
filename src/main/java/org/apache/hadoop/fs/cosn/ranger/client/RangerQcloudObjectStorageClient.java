@@ -10,13 +10,13 @@ import org.apache.hadoop.security.token.Token;
 import java.io.IOException;
 
 public interface RangerQcloudObjectStorageClient {
-    public void init(Configuration conf) throws IOException;
+    void init(Configuration conf) throws IOException;
 
-    public String getCanonicalServiceName();
+    String getCanonicalServiceName();
 
-    public PermissionResponse checkPermission(PermissionRequest permissionRequest) throws IOException;
+    PermissionResponse checkPermission(PermissionRequest permissionRequest) throws IOException;
 
-    public Token<?> getDelegationToken(String renewer) throws IOException;
+    Token<?> getDelegationToken(String renewer) throws IOException;
 
     /**
      * Renew the given token.
@@ -25,7 +25,7 @@ public interface RangerQcloudObjectStorageClient {
      * @throws IOException
      * @throws InterruptedException
      */
-    public long renew(Token<?> token, Configuration conf) throws IOException, InterruptedException;
+    long renew(Token<?> token, Configuration conf) throws IOException, InterruptedException;
 
     /**
      * Cancel the given token
@@ -34,11 +34,11 @@ public interface RangerQcloudObjectStorageClient {
      * @throws InterruptedException
      */
 
-    public void cancel(Token<?> token, Configuration configuration) throws IOException, InterruptedException;
+    void cancel(Token<?> token, Configuration configuration) throws IOException, InterruptedException;
 
-    public GetSTSResponse getSTS(String bucketRegion, String bucketName) throws IOException;
+    GetSTSResponse getSTS(String bucketRegion, String bucketName) throws IOException;
 
     RangerAuthPolicyResponse getRangerAuthPolicy() throws IOException;
 
-    public void close();
+    void close();
 }
