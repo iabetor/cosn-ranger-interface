@@ -8,26 +8,62 @@
     <artifactId>cosn-ranger-interface</artifactId>
     <version>1.0.4</version>
 
+    <name>cosn-ranger-interface</name>
+    <description>Tencent Qcloud COS And CHDFS Ranger interface</description>
+    <url>https://cloud.tencent.com/document/product/436/51125</url>
+    <licenses>
+        <license>
+            <name>cosn-ranger-interface</name>
+            <url>https://github.com/tencentyun/cosn-ranger-interface</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>chengwu</name>
+            <email>chengwu@tencent.com</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/tencentyun/cosn-ranger-interface.git </connection>
+        <developerConnection> scm:git:https://github.com/tencentyun/cosn-ranger-interface.git </developerConnection>
+        <url>https://github.com/tencentyun/cosn-ranger-interface</url>
+    </scm>
+
+    <!-- 发布外部 maven 时使用
+    <distributionManagement>
+        <repository>
+            <id>oss</id>
+            <name>cosn-ranger-interface</name>
+            <url> https://oss.sonatype.org/service/local/staging/deploy/maven2 </url>
+        </repository>
+        <snapshotRepository>
+            <id>oss</id>
+            <name>cosn-ranger-interface</name>
+            <url> https://oss.sonatype.org/content/repositories/snapshots </url>
+        </snapshotRepository>
+    </distributionManagement>
+    -->
+
+    <distributionManagement>
+        <repository>
+            <id>cos-inner-maven-repository</id>
+            <name>cosn-ranger-interface</name>
+            <url>https://mirrors.tencent.com/repository/maven/QCLOUD_COS</url>
+        </repository>
+        <snapshotRepository>
+            <id>cos-inner-maven-repository</id>
+            <name>cosn-ranger-interface</name>
+            <url>https://mirrors.tencent.com/repository/maven/QCLOUD_COS</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <protobuf.version>2.5.0</protobuf.version>
-        <hadoop.version>2.8.5</hadoop.version>
+        <hadoop.version>3.2.2</hadoop.version>
     </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>cos-inner-maven-repository</id>
-            <name>cos-inner-maven-repository</name>
-            <url>https://mirrors.tencent.com/repository/maven/QCLOUD_COS</url>
-        </repository>
-        <snapshotRepository>
-            <id>cos-inner-maven-repository</id>
-            <name>cos-inner-maven-repository</name>
-            <url>https://mirrors.tencent.com/repository/maven/QCLOUD_COS</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <dependencies>
         <dependency>

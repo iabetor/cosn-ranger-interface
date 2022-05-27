@@ -27,4 +27,6 @@ pom.xml-E
 
 dep/*/impala
 
+script_conf/
+
 dependency-reduced-pom.xml
